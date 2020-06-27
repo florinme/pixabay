@@ -38,7 +38,25 @@ img {
 /* Component styles */
 .ImageSearch {
   font-family: sans-serif;
+}
+
+.SearchForm {
   display: flex;
+}
+
+.FlexWrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.FlexWrapper__column {
   flex-direction: column;
-  background: gray;
+}
+
+.FlexWrapper__row {
+  flex-direction: row;
+}
+
+.FlexItem {
+  flex: 1;
 }

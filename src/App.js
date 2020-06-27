@@ -1,5 +1,9 @@
 import React from "react";
 import "./styles.css";
+import SearchForm from "./components/SearchForm";
+import SearchResults from "./components/SearchResults";
+import SavedImages from "./components/SavedImages";
+
 // ... Import api fetch/transform helper
 // ... Import components
 
@@ -12,9 +16,21 @@ export default function App() {
     */
 
     <div className="ImageSearch">
-      {/* ... add SearchForm component */}
-      {/* ... add SearchResults component */}
-      {/* ... add SavedImages component */}
+      <div className="FlexWrapper FlexWrapper__row">
+        <div className="FlexItem">
+          <div className="FlexWrapper FlexWrapper__column">
+            <div className="FlexItem">
+              <SearchForm />
+            </div>
+            <div className="FlexItem">
+              <SearchResults />
+            </div>
+          </div>
+        </div>
+        <div className="FlexItem">
+          <SavedImages />
+        </div>
+      </div>
     </div>
   );
 }
