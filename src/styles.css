@@ -49,6 +49,15 @@ img {
   height: auto;
 }
 
+select {
+  margin: 0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
 /* Flex Grid */
 .FlexWrapper {
   display: flex;
@@ -86,12 +95,16 @@ img {
 
 /* Component styles */
 
-.RightPanel {
-  flex: 0 1 200px;
+.ImageSearch {
+  font-family: sans-serif;
+  width: 95%;
+  padding: 5%;
 }
 
-#ImageSearch {
-  font-family: sans-serif;
+.ImageSearch_rightPanel {
+  flex: 0 1 150px;
+  border-left: 1px solid var(--c-gray-1);
+  padding-left: 10px;
 }
 
 #SearchForm {
@@ -118,6 +131,20 @@ img {
   padding: 11px;
   font-size: 1.2em;
   border: none;
+}
+
+.SearchForm #select {
+  background-image: linear-gradient(45deg, transparent 50%, gray 50%),
+    linear-gradient(135deg, gray 50%, transparent 50%),
+    linear-gradient(to right, #ccc, #ccc);
+  background-position: calc(100% - 20px) calc(1em + 2px),
+    calc(100% - 15px) calc(1em + 2px), calc(100% - 2.5em) 0.5em;
+  background-size: 5px 5px, 5px 5px, 1px 1.5em;
+  background-repeat: no-repeat;
+}
+
+.SearchResults {
+  margin-bottom: 10px;
 }
 
 .ImageButton {

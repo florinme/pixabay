@@ -19,11 +19,8 @@ export default function App() {
       self standing web app.
     */
 
-    <div
-      id="ImageSearch"
-      className="FlexWrapper FlexWrapper__row FlexWrapper__gutter"
-    >
-      <div className="LeftPanel FlexItem">
+    <div className="ImageSearch FlexWrapper FlexWrapper__row FlexWrapper__gutter">
+      <div className="ImageSearch_leftPanel FlexItem">
         <div className="FlexWrapper FlexWrapper__column FlexWrapper__gutter">
           <div className="FlexItem">
             <SearchForm />
@@ -33,7 +30,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="RightPanel FlexItem">
+      <div className="ImageSearch_rightPanel FlexItem">
         <SavedImages />
       </div>
     </div>
