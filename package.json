@@ -1,7 +1,7 @@
 {
-  "name": "fb",
+  "name": "pixabay-search-component",
   "version": "1.0.0",
-  "description": "",
+  "description": "A component for finding images using the Pixabay API.",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
