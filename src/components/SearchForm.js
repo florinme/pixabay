@@ -4,19 +4,18 @@ import { CATEGORIES } from "../utils/categories";
 export default function SearchForm() {
   return (
     <form
-      id="SearchForm"
-      className="FlexWrapper FlexWrapper__column FlexWrapper__gutter"
+      className="SearchForm FlexWrapper FlexWrapper__column FlexWrapper__gutter"
       method="post"
       action=""
     >
       <input
-        className="FlexItem"
+        className="SearchForm_input FlexItem"
         type="search"
         id="search"
         placeholder="Keyword"
         required
       />
-      <select className="FlexItem" id="categories">
+      <select className="SearchForm_input FlexItem" id="select">
         <option value="" selected>
           Category
         </option>
@@ -28,7 +27,7 @@ export default function SearchForm() {
           );
         })}
       </select>
-      <button clasName="FlexItem" type="submit">
+      <button className="SearchForm_button FlexItem" id="button" type="submit">
         Search
       </button>
     </form>

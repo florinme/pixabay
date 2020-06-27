@@ -85,12 +85,39 @@ img {
 }
 
 /* Component styles */
+
+.RightPanel {
+  flex: 0 1 200px;
+}
+
 #ImageSearch {
   font-family: sans-serif;
 }
 
 #SearchForm {
   display: flex;
+}
+
+.SearchForm .FlexItem {
+  border-radius: 5px;
+}
+
+.SearchForm_input {
+  padding: 10px;
+  border: 1px solid var(--c-gray-2);
+  color: var(--c-gray-3);
+}
+
+.SearchForm_input::placeholder {
+  color: var(--c-gray-3);
+}
+
+.SearchForm_button {
+  background-color: var(--c-blue);
+  color: white;
+  padding: 11px;
+  font-size: 1.2em;
+  border: none;
 }
 
 .ImageButton {
@@ -112,8 +139,15 @@ img {
   text-align: center;
   width: 100%;
   padding: 8px 0 8px 0;
-  background-color: var(--c-pink);
   color: white;
+}
+
+.SaveNotice__pink {
+  background-color: var(--c-pink);
+}
+
+.SaveNotice__orange {
+  background-color: var(--c-orange);
 }
 
 .ImageMeta_tags_tag {

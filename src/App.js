@@ -23,7 +23,7 @@ export default function App() {
       id="ImageSearch"
       className="FlexWrapper FlexWrapper__row FlexWrapper__gutter"
     >
-      <div className="FlexItem">
+      <div className="LeftPanel FlexItem">
         <div className="FlexWrapper FlexWrapper__column FlexWrapper__gutter">
           <div className="FlexItem">
             <SearchForm />
@@ -33,7 +33,7 @@ export default function App() {
           </div>
         </div>
       </div>
-      <div className="FlexItem">
+      <div className="RightPanel FlexItem">
         <SavedImages />
       </div>
     </div>
