@@ -19,21 +19,22 @@ export default function App() {
       self standing web app.
     */
 
-    <div className="ImageSearch">
-      <div className="FlexWrapper FlexWrapper__row">
-        <div className="FlexItem">
-          <div className="FlexWrapper FlexWrapper__column">
-            <div className="FlexItem">
-              <SearchForm />
-            </div>
-            <div className="FlexItem">
-              <SearchResults />
-            </div>
+    <div
+      id="ImageSearch"
+      className="FlexWrapper FlexWrapper__row FlexWrapper__gutter"
+    >
+      <div className="FlexItem">
+        <div className="FlexWrapper FlexWrapper__column FlexWrapper__gutter">
+          <div className="FlexItem">
+            <SearchForm />
+          </div>
+          <div className="FlexItem">
+            <SearchResults />
           </div>
         </div>
-        <div className="FlexItem">
-          <SavedImages />
-        </div>
+      </div>
+      <div className="FlexItem">
+        <SavedImages />
       </div>
     </div>
   );
