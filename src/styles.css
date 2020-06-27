@@ -60,3 +60,8 @@ img {
 .FlexItem {
   flex: 1;
 }
+
+.FlexItem:not(:last-child) {
+  flex: 1;
+  margin: 0 0 15px 0;
+}

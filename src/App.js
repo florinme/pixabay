@@ -10,6 +10,10 @@ import SavedImages from "./components/SavedImages";
 export default function App() {
   return (
     /* 
+    ... Add handlers ...
+    */
+
+    /* 
       Leaving out semantic tags like main/header/footer
       since this as a component context rather than a 
       self standing web app.
