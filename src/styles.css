@@ -97,14 +97,21 @@ select {
 
 .ImageSearch {
   font-family: sans-serif;
-  width: 95%;
   padding: 5%;
+}
+
+.ImageSearch a {
+  color: var(--c-blue);
+}
+
+.ImageSearch_leftPanel {
+  padding-right: 5px;
 }
 
 .ImageSearch_rightPanel {
   flex: 0 1 150px;
   border-left: 1px solid var(--c-gray-1);
-  padding-left: 10px;
+  padding-left: 15px;
 }
 
 #SearchForm {
@@ -147,6 +154,18 @@ select {
   margin-bottom: 10px;
 }
 
+.Card:not(:last-child) {
+  width: 100%;
+  max-height: 300px;
+  margin-bottom: 15px;
+}
+
+.Card_img {
+  width: 100%;
+  max-height: 300px;
+  object-fit: cover;
+}
+
 .ImageButton {
   margin: 0;
   padding: 0;
@@ -169,12 +188,13 @@ select {
   color: white;
 }
 
-.SaveNotice__pink {
+.SaveNotice__unsaved {
   background-color: var(--c-pink);
 }
 
-.SaveNotice__orange {
+.SaveNotice__saved {
   background-color: var(--c-orange);
+  display: block;
 }
 
 .ImageMeta_tags_tag {
@@ -191,4 +211,38 @@ select {
 .ImageMeta_stats_icon {
   width: 16px;
   height: auto;
+  margin-left: 5px;
+}
+
+.SavedImages {
+  padding-top: 5px;
+  position: sticky;
+  top: 0;
+}
+
+.SavedImages_title {
+  margin-bottom: 15px;
+}
+
+.SavedImages_link:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+.SavedImages_link_icon {
+  width: 12px;
+  height: auto;
+  margin-left: 5px;
+}
+
+.SavedImages_loadText {
+  margin: 5px 0 5px 0;
+}
+
+.SavedImages_clearButton {
+  background-color: var(--c-blue);
+  color: white;
+  padding: 5px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
 }

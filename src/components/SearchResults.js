@@ -2,39 +2,59 @@ import React from "react";
 import { ReactComponent as LikesIcon } from "../like.svg";
 import { ReactComponent as StarsIcon } from "../star.svg";
 
-export default function SearchResults() {
+export default function SearchResults({ searchResults, onSave }) {
   return (
     <div className="SearchResults FlexWrapper FlexWrapper__column">
-      <Card />
+      {searchResults.map(image => (
+        <Card key={image.id} image={image} onSave={onSave} />
+      ))}
     </div>
   );
 }
 
-function Card() {
+function Card({ image, onSave }) {
   return (
     <div className="Card FlexItem FlexWrapper FlexWrapper__row FlexWrapper__gutter">
-      <button className="ImageButton FlexItem" type="submit">
+      <button
+        onClick={() => {
+          !image.saved && onSave(image.id);
+          /* 
+          Next line mutates a pop and will rerender the component. I want to acknowledge that it's not 
+          best practice so there is an opportunity for improvement here on how image saved states are handled 
+          */
+          image.saved = true;
+        }}
+        className="ImageButton FlexItem"
+        type="submit"
+      >
         <img
-          class="FlexItem"
-          src="https://pixabay.com/get/53e3d6424a5aaf14f1dc84609629347f1639dae7524c704c7c2c79dc9144cc5b_640.jpg"
-          alt="img-_92ya21jmx"
+          className="Card_img FlexItem"
+          src={image.webformatURL}
+          alt={`${image.type} tagged: ${image.tags}`}
         />
-        <div className={`SaveNotice SaveNotice__pink FlexItem`}>Save</div>
+        <div
+          className={`SaveNotice ${
+            image.saved ? "SaveNotice__saved" : "SaveNotice__unsaved"
+          } FlexItem`}
+        >
+          {image.saved ? "Saved" : "Save"}
+        </div>
       </button>
       <div className="ImageMeta FlexItem FlexWrapper FlexWrapper__column">
         <div className="ImageMeta_tags FlexWrapper FlexWrapper__row">
-          <span className="ImageMeta_tags_tag">squirrell</span>
-          <span className="ImageMeta_tags_tag">animal</span>
-          <span className="ImageMeta_tags_tag">furry</span>
-          <span className="ImageMeta_tags_tag">orange</span>
+          {image.tags.split(",").map(tag => (
+            <span key={`${image.id}-${tag}`} className="ImageMeta_tags_tag">
+              {tag}
+            </span>
+          ))}
         </div>
         <div className="ImageMeta_stats FlexItem FlexWrapper FlexWrapper__row FlexWrapper__justifyBetween FlexWrapper__alignBottom">
           <div className="ImageMeta_stats_likes">
-            <span>{`${Math.floor(Math.random() * (500 - 4)) + 4} `}</span>
+            <span>{image.likes}</span>
             <LikesIcon className="ImageMeta_stats_icon" />
           </div>
           <div className="ImageMeta_stats_stars">
-            <span>{`${Math.floor(Math.random() * (500 - 4)) + 4} `}</span>
+            <span>{image.favorites}</span>
             <StarsIcon className="ImageMeta_stats_icon" />
           </div>
         </div>
