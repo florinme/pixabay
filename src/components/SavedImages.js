@@ -10,9 +10,13 @@ export default function SavedImages({
   return (
     <div className="SavedImages FlexWrapper FlexWrapper__column">
       <h3 className="SavedImages_title">Saved</h3>
+      {/* 
+        If there's an error when saving, show it, othwise check for any results, 
+        if so map them, otherwise show a "no saved images" notice.
+      */}
       {savedError
         ? savedError
-        : !!savedResults
+        : !!savedResults.length
         ? savedResults.map((image, i) => (
             <LinkItem key={`${image.id}-${i}`} image={image} />
           ))
