@@ -1,6 +1,6 @@
 /* 
 It is not recommended to store secret keys in this way, but it's better than making them constants. 
-I would recommend a lightweight back end with node/express to make the pixaby call 
+I would recommend a lightweight back end with node/express to make the pixabay call 
 */
 const API_KEY = process.env.REACT_APP_PIXABAY_API_KEY;
 const API_PATH = process.env.REACT_APP_PIXABAY_API_PATH;

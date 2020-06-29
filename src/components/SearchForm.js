@@ -31,6 +31,7 @@ export default function SearchForm({ onSearch }) {
         ref={selectRef}
         defaultValue=""
       >
+        {/* Since there is no placeholder property for the select tag I use a static option here*/}
         <option value="">Category</option>
         {CATEGORIES.map((category, i) => {
           return (
