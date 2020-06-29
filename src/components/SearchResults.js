@@ -19,8 +19,8 @@ function Card({ image, onSave }) {
         onClick={() => {
           !image.saved && onSave(image.id);
           /* 
-          Next line mutates a pop and will rerender the component. I want to acknowledge that it's not 
-          best practice so there is an opportunity for improvement here on how image saved states are handled 
+          Next line mutates a prop and will re-render the component. I want to acknowledge that since it is not 
+          best practice, there is an opportunity for improvement here on how image saved states are handled 
           */
           image.saved = true;
         }}

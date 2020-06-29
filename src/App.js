@@ -80,7 +80,7 @@ export default function App() {
   return (
     /* 
       Leaving out semantic tags like main/header/footer
-      since this as a component context rather than a 
+      since the context is a component rather than a 
       self standing web app.
     */
 
