@@ -1,5 +1,5 @@
 # API Information
-.env       <-- add this line
+# .env
 
 # dependencies
 /node_modules
