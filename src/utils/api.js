@@ -38,6 +38,7 @@ export async function getSearchResults(
   }
 }
 
+// Grab images by ID for display on the right panel
 export async function getImage(id) {
   const apiParameters = `?key=${API_KEY}&id=${id}`;
 
@@ -55,6 +56,7 @@ export async function getImage(id) {
   }
 }
 
+// If we already have this id, mark it as saved
 function transformSaved(savedImageIds, incomingImages) {
   return incomingImages.map(image => {
     if (savedImageIds.includes(image.id.toString())) {
