@@ -28,8 +28,14 @@ export default function App() {
   // Fetch individual images by local storage id or on demand
   // Would also be useful for adding a thumbnails to the right pane
   async function getImages(ids) {
+    let idArray = [];
+    if (Array.isArray(ids)) {
+      idArray = ids;
+    } else {
+      idArray.push(ids); // Cast incoming ids to array
+    }
     setSavedStatus("Fetching");
-    ids.forEach(async id => {
+    idArray.forEach(async id => {
       try {
         const result = await getImage(id);
         setSavedStatus("Done");
@@ -63,11 +69,18 @@ export default function App() {
 
   function onSave(id) {
     const newSavedImages = [...savedImages];
-    const savedImageId = id.toString().split();
-    newSavedImages.push(id);
+    const alreadySavedIndex = newSavedImages.indexOf(id.toString());
+    if (alreadySavedIndex === -1) {
+      // Item not saved
+      newSavedImages.push(id.toString());
+      getImages(id);
+    } else {
+      // Item is already saved
+      newSavedImages.splice(alreadySavedIndex, 1);
+      setSavedResults(savedResults.filter(image => image.id !== id));
+    }
     localStorage.setItem("savedImages", newSavedImages.join(" "));
     setSavedImages(newSavedImages);
-    getImages(savedImageId);
   }
 
   function clearSaved() {

@@ -17,12 +17,12 @@ function Card({ image, onSave }) {
     <div className="Card FlexItem FlexWrapper FlexWrapper__row FlexWrapper__gutter">
       <button
         onClick={() => {
-          !image.saved && onSave(image.id);
+          onSave(image.id);
           /* 
           Next line mutates a prop and will re-render the component. I want to acknowledge that since it is not 
           best practice, there is an opportunity for improvement here on how image saved states are handled 
           */
-          image.saved = true;
+          image.saved = !image.saved;
         }}
         className="ImageButton FlexItem"
         type="submit"
@@ -37,7 +37,7 @@ function Card({ image, onSave }) {
             image.saved ? "SaveNotice__saved" : "SaveNotice__unsaved"
           } FlexItem`}
         >
-          {image.saved ? "Saved" : "Save"}
+          {image.saved ? "Unsave" : "Save"}
         </div>
       </button>
       <div className="ImageMeta FlexItem FlexWrapper FlexWrapper__column">
